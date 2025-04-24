@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/*
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+@font-face {
+        font-family: 'Bebas Neus';
+        src: url('BebasNeue-Regular.ttf') format('opentype');
+        font-weight: normal;
+}
+@font-face{
+        font-family: 'Android';
+        src: url('./fontes/idroid.otf') format('opentype');
+        font-weight: normal;
+}
+:root{ /* Raís do documento*/
+        --cor0: #c5ebd6;   
+        --cor1: #83e1ad;
+        --cor2: #3ddc84;
+        --cor3: #2fa866;
+        --cor4: #1a5c37;
+        --cor5: #063d1e;
+
+        --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+        --font-destaque: 'Bebas Neus', cursiva;
+        --font-android: 'Android';
+}
+*{
+        margin: 0px;
+        padding: 0px;
+}
+
+body{
+        /*background-color: #c5ebd6; usei as variáveis das cores*/ 
+        background-color:var(--cor0);
+        font-family: var(--font-padrao);
+}
+a.externo::after{  /* Em todos os links com a classe externo, vai aparecer uma correntinha (emoji código U+1F517)no final, indicando que esses links levam a outros sites OBS: NÃO GOSTEI*/
+        content: '\00A0\1F517';  
+}
+header{
+        background-image: linear-gradient(to bottom,var(--cor3), var(--cor5));
+        min-height: 150px;
+        text-align: center;
+        padding-top: 40px;
+
+
+}
+
+header > h1{
+        color: white;
+        font-family: var(--font-destaque);
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 4em;
+        text-shadow: 2px 2px 2px black;
+}  
+header > p{
+        color: white;
+        font-family: var(--font-padrao);
+        font-size: 1.2em;
+        max-width: 500px;
+        margin: auto;
+        padding: 0px 10px 20px 10px;
+        text-shadow: 2px 2px 2px black;
+}
+nav{
+        background-color: var(--cor5);
+        padding: 10px;
+        box-shadow: 0px 7px 9px black;
+        
+}
+nav >a{
+        color:white;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+     /* transition-duration: 0.3s; Da efeito de mudança durante o tempo colocado nesse parametro. Não gostei muito.*/
+        border-radius: 5px ;
+
+
+}
+nav > a:hover{
+        background-color: var(--cor1);
+        color: var(--cor5)
+
+}
+main{
+        background-color: white;
+        max-width: 1000px;
+        min-width: 300px;
+        margin: auto;
+        box-shadow: 0px 0px 10px black ;
+       /* border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;*/
+        padding: 20px;
+
+}
+main p{
+     margin: 15px 0px;
+     text-align: justify;
+     text-indent: 30px;
+     line-height: 2em;  /*aumenta o espaçamento entre linhas */
+     font-size: 1.1em;
+}
+main strong{  /* Configura todo que estiver marcado como strong dentro do main   NÃO GOSTEI MUITO*/
+     color: var(--cor4);
+     font-weight: bold;
+    
+ }
+main a{
+        background-color: var(--cor1);
+        padding: 2px 6px;
+        color: var(--cor5);
+        font-weight: bold;
+        text-decoration: none;
+}
+main a:hover{
+        color: var(--cor4);
+        text-decoration: underline;
+}
+main h1{
+        color: var(--cor5);
+        font-family: var(--font-android);
+        font-weight: normal;
+}
+
+main h2{
+        color: var(--cor4);
+        font-family: var(--font-android);
+        font-size: 1.3em;
+        background-image: linear-gradient(to right, var(--cor1), transparent );
+        text-indent: 8px;
+        font-weight: normal;
+}    
+main img{
+        margin: auto;
+        display: block;
+}        
+main img.pequena{
+        max-width: 350px;
+        margin: auto;
+        display: block;
+     
+}
+div.video{
+        background-color: var(--cor5);
+        margin-bottom: 30px;
+        margin: 0px -20px; 
+        padding: 20px;
+        position: relative;
+        padding-bottom: 57.1%; /*Mexer nesse parâmetro diminui as barras pretas que aparecem ao lado do video quando damos play, mas só depois de organizar as porcentagens do iframe*/
+}
+div.video > iframe{
+        position: absolute;
+        top: 5%;  /* distancia entre o top do video e o topo da div*/
+        left: 5%;
+        width: 90% ;
+        height: 90%;
+}
+
+aside{
+        background-color: var(--cor1);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281) ;
+}
+aside > ul{
+        list-style-type: '\2714\00A0\00A0'; /* O simbolo usado antes da lista foi pego na emojipedia, o codido que normalmente é U+2714, deve-se tirar o U+ e colocar uma barra invertida, o \00A0 é o espaço. NÃO É COMPATIVEL COM TODO TIPO DE NAVEGADOR*/
+        list-style-position: inside;
+        columns: 2;  /* divide a lista em 2 colunas*/
+}
+aside > h3{
+    font-family: var(--font-android);
+    color: white;
+     padding: 5px;
+    margin:-10px -10px 0px -10px; 
+    /*border-radius: 5px 5px 0px 0px;*/
+    background-color: var(--cor4);
+    border-radius: 10px 10px 0px 0px;
+    font-weight: normal;
+}
+aside p{
+        margin: 0px;
+}
+iframe{
+    margin-bottom: 20px;
+}
+footer{
+        background-color: var(--cor5);
+        color: white;
+        text-align: center; 
+        font-size: 0.8em;
+        padding: 5px;
+}
+ footer  a{
+        color:white;
+        font-weight: bolder ;
+        text-decoration: none;
+ }
+ footer a:hover{
+     text-decoration: underline;
+     color: var(--cor1);
+     
+ }
